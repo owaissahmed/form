@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <center>
+        <table id="table">
+            <tr>
+                <td class="td">
+                    First Name
+                </td>
+                <td class="td">
+                    Last Name
+                </td>
+                <td class="td">
+                    CNIC
+                </td>
+                <td class="td">
+                    Email
+                </td>
+                <td class="td">
+                    Password
+                </td>
+                <td class="td">
+                    Delete Button
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script src="app.js"></script>
+    <script>
+        function abc() {
+            var getdata = JSON.parse(localStorage.getItem("data"))
+            for (var key in getdata)
+                document.getElementById("table").children[0].innerHTML +=
+                    ` <tr>
+                <td class="td">
+                   ${getdata[key].firstname}
+                </td>
+                <td class="td">
+                    ${getdata[key].lastname}
+                </td>
+                <td class="td">
+                    ${getdata[key].cnic}
+                </td>
+                <td class="td">
+                    ${getdata[key].email}
+                </td>
+                <td class="td">
+                    ${getdata[key].password}
+                </td>
+                <td class="td">
+                  <button id="btndel" onclick="dlt()">Delete</button>
+                </td>
+            </tr>`
+        }
+        abc()
+    </script>
+</body>
+
+</html>
